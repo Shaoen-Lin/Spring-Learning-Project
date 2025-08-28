@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- bean definitions here -->
+<!--    <bean id="dev1" class="com.Shawn.Develop"> (id is optional)-->
+<!--        <property name="age" value="12"/> -->
+<!--        This is SET 記得 name = " "。name 就是 dev class 裡的變數名稱 -->
+
+<!--        <constructor-arg value="14" />-->
+<!--        This is Constructor 只有一個 parameter 不用寫 Index = 0 -->
+
+<!--        <property name="laptop" ref="lap1"/>-->
+<!--    </bean>-->
+
+    <bean id="dev" class="com.Shawn.Develop" autowire="byName">
+<!--        autowire="byName" IF "NAME"(ID) IS SAME WITH THE OBJECT THEN autowiring whose id also called com -->
+<!--        BY type = FIND THE OBJECT NAME WHO IS ALSO COMPUTER-->
+<!--        <property name="com" ref="com"/>  這根本就可以用 AutoWiring 代替-->
+    </bean>
+
+    <bean id="lap1" class="com.Shawn.Laptop">
+    </bean>
+
+    <bean id="com" class="com.Shawn.Laptop">
+    </bean>
+
+    <bean id="desk1" class="com.Shawn.Desktop">
+    </bean>
+
+</beans>
+
+<!--這裡使用XML檔的目的有2個。1.為了 Suitable for Legacy File 2.可以比HTML檔多一堆可以自定義的tag-->
+<!--XML(Extensible Markup Language)的 tag 可以用自定義的，只是自己要加上Configuration // HTML(HyperText Markup Language) 的 tag 只能用定義好的-->
+
+<!--這裡要貼上beans的Configuration(可以在 Google 上面查 Spring 6 bean configuration xml)-->
